@@ -20,7 +20,7 @@ class LoginScreen extends StatelessWidget {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              Image.network(
+              Image.asset(
                 backgroundImage,
                 width: MediaQuery.of(context).size.width,
                 height: mHeight,

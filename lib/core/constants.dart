@@ -14,7 +14,7 @@ SizedBox kHeight30 = const SizedBox(
 Color colorBlue = const Color(0xFF006EFF);
 //background image
 String backgroundImage =
-    'https://4kwallpapers.com/images/wallpapers/macos-monterey-stock-blue-dark-mode-layers-5k-750x1334-5895.jpg';
+    'assets/macos-monterey-stock-blue-dark-mode-layers-5k-750x1334-5895.jpg';
 
 // blur rate
 const double sigmaX = 5; // from 0-10

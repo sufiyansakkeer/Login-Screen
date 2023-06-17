@@ -20,7 +20,7 @@ class SignUp extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               //background image
-              Image.network(
+              Image.asset(
                 backgroundImage,
                 width: mSize.width,
                 height: mSize.height,
