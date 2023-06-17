@@ -1,24 +1,17 @@
 import 'package:data_mite/core/constants.dart';
+import 'package:data_mite/provider/login_provider.dart';
 import 'package:data_mite/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'widgets/login_form.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
-  // text editing controllers
-  final passwordController = TextEditingController();
-  final emailController = TextEditingController();
-
-  final double _sigmaX = 5; // from 0-10
-  final double _sigmaY = 5; // from 0-10
-  final double _opacity = 0.2;
 
   final _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     final mHeight = MediaQuery.of(context).size.height;
-    final size3 = SizedBox(height: mHeight * 0.03);
     return Scaffold(
       backgroundColor: Colors.grey[300],
       body: SingleChildScrollView(
@@ -44,14 +37,9 @@ class LoginScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       )),
                   SizedBox(height: mHeight * 0.02),
+                  // Login Form
                   LoginForm(
-                    sigmaX: _sigmaX,
-                    sigmaY: _sigmaY,
-                    opacity: _opacity,
                     formKey: _formKey,
-                    size3: size3,
-                    emailController: emailController,
-                    passwordController: passwordController,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -68,25 +56,28 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => SignUp(),
-                          ));
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 10,
-                          ),
-                          child: const Text(
-                            "Sign Up",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                      Consumer<LoginProvider>(builder: (context, value, child) {
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => SignUp(),
+                            ));
+                            value.disposeTextField(context);
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 10,
+                            ),
+                            child: const Text(
+                              "Sign Up",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
-                        ),
-                      ),
+                        );
+                      }),
                     ],
                   ),
                 ],
