@@ -59,7 +59,8 @@ class SignUp extends StatelessWidget {
                           builder: (context, value, child) {
                         return GestureDetector(
                           onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
+                            Navigator.of(context)
+                                .pushReplacement(MaterialPageRoute(
                               builder: (context) => LoginScreen(),
                             ));
                             value.disposeTextField(context);
