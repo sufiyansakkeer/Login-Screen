@@ -1,8 +1,16 @@
 # Login and Registration UI in Flutter
 
 This project is a Flutter application that showcases a login and registration user interface (UI) using the Provider package for state management. It provides a seamless and intuitive user experience for handling user authentication and registration.
-
-[
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/sufiyansakkeer/Login-Screen/blob/main/Screenshot_1687072863.png" alt="Image 1" width="350px">
+    </td>
+    <td>
+      <img src="https://github.com/sufiyansakkeer/Login-Screen/blob/main/Screenshot_1687072869.png" alt="Image 2" width="350px">
+    </td>
+  </tr>
+</table>
 
 ## Features
 
